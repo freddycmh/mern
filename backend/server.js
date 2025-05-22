@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 import productRoutes from "./routes/product.route.js"
 
 dotenv.config();
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -18,7 +19,7 @@ app.use("/api/products", productRoutes);
 
 app.listen(3000,()=>{
     connectDB();
-    console.log("Serve started at http://localhost:3000");
+    console.log("Serve started at http://localhost:"+PORT);
 });
 
 
